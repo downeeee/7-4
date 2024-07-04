@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ul,li,ol{list-style: none; }
+a{text-decoration: none;color: inherit;}
+
+
+
+
+
+
+
+.bg{ background-color: rgb(70, 255, 150) !important; border: 1px solid black;}
+
+.txt{font-weight: bold;
+    text-shadow: 0 0 5px black;
+    font-size: 20px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.list{
+    
+    text-align: center;
+}
+
+
+
+
+
+
+/* 블럭구조 특징
+블럭구조 부모width 상속받아옴
+*상속 안되는 경우 :float position flex grid
+높이는 부모의 높이가 상속 안됨
+
+내용 있음: 높이는 내용만큼만 생성
+내영 없음: 너비 높이가 없다
+
+부모의 width 100% 상속 받았고 
+자신 width 100% 다 사용하면 margin 0 auto 의 의미가 없다
+margin 0 auto 부모의 100% 중에 내 width를 일부만 사용 할 경우
+가운데 정렬 가능*/
+
+.list li{
+        display: inline-block;
+        width: 200px; height: 50px;}
+
+.list li a{
+    /* 인라인 구조
+    width, height 내용만큼만 보임
+    width height 입력해도 안먹힘
+    padding-top, padding-bottom,margin-top,margin-bottom 안먹힘
+    좌우는 됨   */
+    background-color: violet ;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+    color: beige;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.list1{/* border: 1px solid rgb(255, 65, 96); */
+        overflow: hidden;
+        width: 1000px; margin: 20px auto;
+}
+
+.list1 li{
+            float: left;
+}
+/* float ㅅㅏ용하면 내 with는 내용만큼만 잡힘
+부모의 높이가 0이됨(부모에 높이가 있으면 높이 유지):해결은 부모의 높이를 설정 or 
+overflow hidden 을 건다
+부모의 높이가  0이 돼서 다음 구조가 따라온다 다음 구조에 clear both */
+
+.list1 li a{display: block; width: 200px; height: 50px; line-height: 50px;
+            text-align: center;
+            background-color: rosybrown; border-radius: 30px;}
+
+
+
+
+
+
+
+.list2{
+        display: flex;
+        justify-content: center;
+        height: 100px;
+        justify-content:space-between;
+    align-items: flex-end;}
+
+        /*flex-direction: row 기본 
+        justify-content center :가운데정렬 
+        justify-content space-around n등분 해서 끝쪽으로 분배함
+                ''      space-between n등분 해서 가운데쪽으로 분배함
+        align-items flex-end : 부모의 바닥에 붙음
+        */
+
+.list2 li{height: 80px;}
+
+.list2 li a{display: block; padding: 10px 30px;
+            background-color: tomato; height: 100%; }
+
+.box_over{border-radius: 20px; box-shadow: 1px 1px black;}
+
+.list3{
+        margin: 100px 0;
+        display: grid;
+       /*  grid-template-columns: repeat(5, 200px); */
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        }
+
+.list3 li{}
+
+.list3 li a{display: block; background-color: salmon; border-radius: 20px;
+            padding: 20px ;
+            text-align: center;}
+
+
+
+
+
+.grid_b{background-color: rgb(255, 190, 178) !important; color: white; box-shadow: 0 0 5px yellow;
+        border-radius: 60px !important;}

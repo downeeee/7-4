@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="refresh" content="5; url=http://naver.com">
+    <!-- <meta http-equiv="refresh" content="5; url=앞뒷면카드.html"> -->
+    <title>Document</title>
+
+    <style type="text/css">
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        ul,li,ol{list-style: none; }
+        a{text-decoration: none;color: inherit;}
+        html,body{height: 100%;}
+
+        body{background-color: rgb(124, 124, 124);position: relative; transform-style: 500px;}
+
+        .cube{position: absolute; width: 200px; height: 200px;left: 0; top: 0; right: 0; bottom: 0; margin: auto;
+                transform-style: preserve-3d; animation: random_rotate 8s infinite ease-in-out;}
+
+        .face{width: 200px; height: 200px; /* background-color: aqua; */ text-align: center; line-height: 200px; position: absolute;}
+
+        .front{background-color: rgb(255, 153, 19);transform: translateZ(100px);}
+
+        .back{background-color: tomato;transform: translateZ(-100px);}
+
+        .left{background-color: sandybrown; transform: translateX(-100px) rotateY(90deg); }
+
+        .right{background-color: royalblue;transform: translateX(100px) rotateY(90deg); }
+
+        .top{background-color: rgb(59, 40, 180);transform:  translateY(100px) rotateX(90deg); }
+
+        .bottom{background-color: rgb(72, 255, 133); transform: translateY(-100px) rotateX(-90deg);}
+
+
+        @keyframes random_rotate{
+                    100%{transform: rotateX(360DEG) rotateY(360deg) rotateZ(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <div class="cube">
+        <div class="face front">1</div>
+        <div class="face back">2</div>
+        <div class="face left">3</div>
+        <div class="face right">4</div>
+        <div class="face top">5</div>
+        <div class="face bottom">6</div>
+    </div>
+</body>
+</html>
